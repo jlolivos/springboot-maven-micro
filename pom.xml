@@ -35,12 +35,17 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-       <plugin>
+       		<plugin>
                <groupId>io.snyk</groupId>
                  <artifactId>snyk-maven-plugin</artifactId>
                  <version>2.2.0</version>
                  <inherited>false</inherited>
-    </plugin>
+       		</plugin>
+			<plugin>
+      		  <groupId>org.sonarsource.scanner.maven</groupId>
+      			<artifactId>sonar-maven-plugin</artifactId>
+      			<version>4.16.0.527</version>
+    		</plugin>
 		</plugins>
 	</build>
 
