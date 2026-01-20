@@ -17,20 +17,12 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>springboot-maven-micro</name>
-
-    <!-- Repos necesarios para el plugin de SonarCloud -->
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonarsource</id>
-            <url>https://maven.sonarsource.org/content/groups/public/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
+         
     <properties>
         <java.version>17</java.version>
 
         <!-- Versión estable del plugin SonarCloud -->
-        <sonar.maven.plugin.version>4.17.0.658</sonar.maven.plugin.version>
+        <sonar.maven.plugin.version>4.11.0.3905</sonar.maven.plugin.version>
 
         <!-- Configuración SonarCloud (ajústalo a tu cuenta) -->
         <sonar.organization>snyk-99</sonar.organization>
