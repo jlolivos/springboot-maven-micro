@@ -1,66 +1,72 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.cloudtechmasters</groupId>
-	<artifactId>springboot-maven-course-micro-svc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-maven-course-micro-svc</name>
-	<description>Demo project for Spring Boot</description>
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+    <groupId>com.jlolivos</groupId>
+    <artifactId>springboot-maven-micro</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>springboot-maven-micro</name>
 
-	<pluginRepositories>
- 	 	<pluginRepository>
-    		<id>sonarsource</id>
-    		<url>https://maven.sonarsource.org/content/groups/public/</url>
-  		</pluginRepository>
-	</pluginRepositories>
+    <!-- Repos necesarios para descargar el plugin sonar -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>sonarsource</id>
+            <url>https://maven.sonarsource.org/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
-	<repositories>
-    	<repository>
-      		<id>central</id>
-      		<url>https://repo.maven.apache.org/maven2</url>
-    	</repository>
-  	</repositories>
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-       		<plugin>
-               <groupId>io.snyk</groupId>
-                 <artifactId>snyk-maven-plugin</artifactId>
-                 <version>2.2.0</version>
-                 <inherited>false</inherited>
-       		</plugin>
-			<plugin>
-      		  <groupId>org.sonarsource.scanner.maven</groupId>
-      			<artifactId>sonar-maven-plugin</artifactId>
-      			<version>4.17.0.658</version>
-    		</plugin>
-		</plugins>
-	</build>
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        
+        <!-- Versión estable del plugin sonar -->
+        <sonar.maven.plugin.version>4.17.0.658</sonar.maven.plugin.version>
+
+        <!-- Variables para sonarcloud -->
+        <sonar.organization>snyk-99</sonar.organization>
+        <sonar.projectKey>snyk-99</sonar.projectKey>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
+
+    <dependencies>
+        <!-- Ejemplos básicos de Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- Plugin SonarCloud -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>${sonar.maven.plugin.version}</version>
+            </plugin>
+
+            <!-- Compilación Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>
