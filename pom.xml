@@ -29,6 +29,20 @@
 		</dependency>
 	</dependencies>
 
+	<pluginRepositories>
+ 	 	<pluginRepository>
+    		<id>sonarsource</id>
+    		<url>https://maven.sonarsource.org/content/groups/public/</url>
+  		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+    	<repository>
+      		<id>central</id>
+      		<url>https://repo.maven.apache.org/maven2</url>
+    	</repository>
+  	</repositories>
+	
 	<build>
 		<plugins>
 			<plugin>
